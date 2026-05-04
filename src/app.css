@@ -1,0 +1,178 @@
+/* ──────────────────────────────────────────────────────────
+   HAYRA — Scholarly Edition design tokens (global)
+   Ported 1:1 from the Stitch "Hayra Scholarly System".
+   ────────────────────────────────────────────────────────── */
+:root {
+  /* ── Colors ──────────────────────────────────────────── */
+  --void: #000000;
+  --surface-l1: #101010;
+  --surface-l2: #212121;
+
+  --background: #141312;
+  --on-background: #e6e2df;
+
+  --surface: #141312;
+  --surface-dim: #141312;
+  --surface-bright: #3a3937;
+  --surface-container-lowest: #0f0e0d;
+  --surface-container-low: #1c1b1a;
+  --surface-container: #201f1e;
+  --surface-container-high: #2b2a28;
+  --surface-container-highest: #363533;
+  --surface-variant: #363533;
+  --on-surface: #e6e2df;
+  --on-surface-variant: #c9c6bc;
+
+  --primary: #fbf7e4;
+  --on-primary: #323124;
+  --primary-container: #dedbc8;
+  --on-primary-container: #616051;
+  --primary-fixed: #e6e3d0;
+  --primary-fixed-dim: #cac7b5;
+
+  --secondary: #c8c7b4;
+  --on-secondary: #303124;
+  --secondary-container: #474839;
+  --on-secondary-container: #b7b6a3;
+
+  --tertiary: #fff4fd;
+  --on-tertiary: #352e36;
+  --tertiary-container: #e3d7e2;
+  --on-tertiary-container: #655d66;
+
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+
+  --outline: #939187;
+  --outline-variant: #48473f;
+
+  /* Brand-direct creams used in markup */
+  --warm-cream: #DEDBC8;
+  --light-cream: #E1E0CC;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-sans: 'Almarai', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-display-serif: 4rem;
+  --lh-display-serif: 1.1;
+
+  --fs-h1: 3rem;
+  --lh-h1: 1.2;
+
+  --fs-h2: 1.5rem;
+  --lh-h2: 1.4;
+  --ls-h2: 0.02em;
+
+  --fs-body-lg: 1.125rem;
+  --lh-body-lg: 1.7;
+
+  --fs-body-md: 1rem;
+  --lh-body-md: 1.6;
+
+  --fs-label-caps: 0.75rem;
+  --lh-label-caps: 1;
+  --ls-label-caps: 0.1em;
+
+  /* ── Spacing ──────────────────────────────────────────── */
+  --space-base: 4px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --gutter: 2rem;
+  --margin-safe: 5vw;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --radius-sm: 0.5rem;
+  --radius-default: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* ── Easing curves ────────────────────────────────────── */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+html {
+  background: var(--void);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--void);
+  color: var(--light-cream);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+img, video, svg { display: block; max-width: 100%; }
+
+::selection {
+  background: var(--primary-container);
+  color: #000;
+}
+
+/* ── Material Symbols sizing ──────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* ── Reusable noise overlay (utility) ─────────────────── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 128px 128px;
+  background-repeat: repeat;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+.bg-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n2'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n2)'/></svg>");
+  opacity: 0.15;
+}
+
+/* ── Page-level layout helpers ────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.page > main { flex: 1 1 auto; }
