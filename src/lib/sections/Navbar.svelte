@@ -26,7 +26,7 @@
       {/each}
     </div>
 
-    <button type="button" class="cta">Oʻqishni boshla</button>
+    <a href="/maqolot" class="cta">Oʻqishni boshla</a>
 
     <button
       type="button"
@@ -56,9 +56,9 @@
         </li>
       {/each}
     </ul>
-    <button type="button" class="cta panel-cta" onclick={closeMenu}>
+    <a href="/maqolot" class="cta panel-cta" onclick={closeMenu}>
       Oʻqishni boshla
-    </button>
+    </a>
   </div>
 </nav>
 

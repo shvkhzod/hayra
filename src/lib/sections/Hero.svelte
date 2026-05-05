@@ -23,10 +23,10 @@
             Besh asr oldin yozilgan. Hozir oʻqilishi kerak. Soʻz —
             qoʻlyozmadan. Hech narsa qoʻshilmadi, hech narsa olib tashlanmadi.
           </p>
-          <button type="button" class="begin">
+          <a href="/maqolot" class="begin">
             Oʻqishni boshla
             <span class="material-symbols-outlined arrow">arrow_right_alt</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
